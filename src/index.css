@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overflow-y: overlay;
+  color: #fff;
+  background-color: #1b1b1b;
+}
+
 #root {
   height: 100vh;
   display: grid;
   grid-template: 48px 1fr 48px / 1fr;
-  color: #fff;
-  background-color: #1b1b1b;
 }
