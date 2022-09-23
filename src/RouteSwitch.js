@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar.js';
 import Home from './components/Home.js';
 import Shop from './components/Shop.js';
+import Footer from './components/Footer.js';
 
 const RouteSwitch = () => {
   return (
@@ -21,6 +22,7 @@ function LayoutsWithNavbar() {
     <>
       <Navbar />
       <Outlet />
+      <Footer />
     </>
   );
 }
