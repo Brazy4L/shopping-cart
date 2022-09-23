@@ -1,5 +1,5 @@
 function Shop() {
-  return <div>hey123</div>;
+  return <div>w</div>;
 }
 
 export default Shop;
