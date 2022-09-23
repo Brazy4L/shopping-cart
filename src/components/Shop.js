@@ -1,5 +1,15 @@
 function Shop() {
-  return <div>2</div>;
+  const items = [
+    {
+      img: ,
+      name: ,
+      price: ,
+    },
+  ];
+
+  return <div>
+    <div></div>
+  </div>;
 }
 
 export default Shop;
