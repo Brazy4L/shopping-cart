@@ -16,101 +16,104 @@ import s14 from './images/s14.jpg';
 import s15 from './images/s15.jpg';
 
 function Shop() {
+  const items = [
+    {
+      img: s1,
+      name: 'Sneakers #1',
+      price: 256,
+      qty: 1,
+    },
+    {
+      img: s2,
+      name: 'Sneakers #2',
+      price: 728,
+      qty: 1,
+    },
+    {
+      img: s3,
+      name: 'Sneakers #3',
+      price: 376,
+      qty: 1,
+    },
+    {
+      img: s4,
+      name: 'Sneakers #4',
+      price: 643,
+      qty: 1,
+    },
+    {
+      img: s5,
+      name: 'Sneakers #5',
+      price: 234,
+      qty: 1,
+    },
+    {
+      img: s6,
+      name: 'Sneakers #6',
+      price: 865,
+      qty: 1,
+    },
+    {
+      img: s7,
+      name: 'Sneakers #7',
+      price: 967,
+      qty: 1,
+    },
+    {
+      img: s8,
+      name: 'Sneakers #8',
+      price: 120,
+      qty: 1,
+    },
+    {
+      img: s9,
+      name: 'Sneakers #9',
+      price: 324,
+      qty: 1,
+    },
+    {
+      img: s10,
+      name: 'Sneakers #10',
+      price: 460,
+      qty: 1,
+    },
+    {
+      img: s11,
+      name: 'Sneakers #11',
+      price: 521,
+      qty: 1,
+    },
+    {
+      img: s12,
+      name: 'Sneakers #12',
+      price: 743,
+      qty: 1,
+    },
+    {
+      img: s13,
+      name: 'Sneakers #13',
+      price: 853,
+      qty: 1,
+    },
+    {
+      img: s14,
+      name: 'Sneakers #14',
+      price: 634,
+      qty: 1,
+    },
+    {
+      img: s15,
+      name: 'Sneakers #15',
+      price: 548,
+      qty: 1,
+    },
+  ];
+
   const [shop, setShop] = useState([]);
 
   useEffect(() => {
-    setShop([
-      {
-        img: s1,
-        name: 'Sneakers #1',
-        price: 256,
-        qty: 1,
-      },
-      {
-        img: s2,
-        name: 'Sneakers #2',
-        price: 728,
-        qty: 1,
-      },
-      {
-        img: s3,
-        name: 'Sneakers #3',
-        price: 376,
-        qty: 1,
-      },
-      {
-        img: s4,
-        name: 'Sneakers #4',
-        price: 643,
-        qty: 1,
-      },
-      {
-        img: s5,
-        name: 'Sneakers #5',
-        price: 234,
-        qty: 1,
-      },
-      {
-        img: s6,
-        name: 'Sneakers #6',
-        price: 865,
-        qty: 1,
-      },
-      {
-        img: s7,
-        name: 'Sneakers #7',
-        price: 967,
-        qty: 1,
-      },
-      {
-        img: s8,
-        name: 'Sneakers #8',
-        price: 120,
-        qty: 1,
-      },
-      {
-        img: s9,
-        name: 'Sneakers #9',
-        price: 324,
-        qty: 1,
-      },
-      {
-        img: s10,
-        name: 'Sneakers #10',
-        price: 460,
-        qty: 1,
-      },
-      {
-        img: s11,
-        name: 'Sneakers #11',
-        price: 521,
-        qty: 1,
-      },
-      {
-        img: s12,
-        name: 'Sneakers #12',
-        price: 743,
-        qty: 1,
-      },
-      {
-        img: s13,
-        name: 'Sneakers #13',
-        price: 853,
-        qty: 1,
-      },
-      {
-        img: s14,
-        name: 'Sneakers #14',
-        price: 634,
-        qty: 1,
-      },
-      {
-        img: s15,
-        name: 'Sneakers #15',
-        price: 548,
-        qty: 1,
-      },
-    ]);
+    setShop(items);
+  // eslint-disable-next-line
   }, []);
 
   return (
@@ -130,15 +133,39 @@ function Shop() {
           <div>{item.name}</div>
           <div className="text-green-400">IN STOCK</div>
           <div>${item.price}</div>
-          <div className="flex">
+          <div className="flex items-center">
             <label className="flex-grow">Quantity:</label>
+            <button
+              onClick={() => {
+                const array = shop.slice();
+                shop[index].qty += 1;
+                setShop(array);
+              }}
+            >
+              +1
+            </button>
             <input
               className="text-black w-10 h-6"
               type="number"
-              defaultValue={item.qty}
+              value={shop[index].qty}
+              onChange={(e) => {
+                const array = shop.slice();
+                const num = Number(e.target.value);
+                shop[index].qty = num;
+                setShop(array);
+              }}
             />
-            <button onClick={() => {}}>+1</button>
-            <button onClick={() => {}}>-1</button>
+            <button
+              onClick={() => {
+                if (shop[index].qty > 1) {
+                  const array = shop.slice();
+                  shop[index].qty -= 1;
+                  setShop(array);
+                }
+              }}
+            >
+              -1
+            </button>
           </div>
           <button className="border-2 border-green-500">Add To Cart</button>
         </div>
