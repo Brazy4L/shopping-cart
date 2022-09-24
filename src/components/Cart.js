@@ -1,4 +1,28 @@
+import { useEffect, useState } from 'react';
+
 function Cart(props) {
+  const [total, setTotal] = useState(0);
+  
+  useEffect(() => {
+    getTotal();
+    // eslint-disable-next-line
+  }, []);
+
+  const getTotal = () => {
+    let array = [];
+    props.shop
+      .filter((i) => i.cart === true)
+      .forEach((item) => {
+        let num = item.qty * item.price;
+        array.push(num);
+      });
+    let sum = 0;
+    for (const value of array) {
+      sum += value;
+    }
+    setTotal(sum);
+  };
+
   return (
     <div className="grid justify-items-center auto-rows-min gap-3">
       {props.shop
@@ -18,15 +42,14 @@ function Cart(props) {
                 const array = props.shop.slice();
                 item.cart = false;
                 props.setShop(array);
+                getTotal();
               }}
             >
               Remove
             </button>
           </div>
         ))}
-      <div>
-        Total: {}
-      </div>
+      <div>Total: ${total}</div>
     </div>
   );
 }
