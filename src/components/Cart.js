@@ -8,6 +8,10 @@ function Cart(props) {
     // eslint-disable-next-line
   }, []);
 
+  const [itemsLength] = useState(
+    props.shop.filter((i) => i.cart === true).length
+  );
+
   const getTotal = () => {
     let array = [];
     props.shop
@@ -23,6 +27,24 @@ function Cart(props) {
     setTotal(sum);
   };
 
+  function ShowTotal() {
+    if (itemsLength > 0) {
+      return (
+        <div className="grid grid-flow-col w-80">
+          <div>
+            Total: <span className="font-bold">${total}</span>
+          </div>
+          <button className="justify-self-end border-2 border-green-500 px-6">
+            Checkout
+          </button>
+        </div>
+      );
+    }
+    if (itemsLength === 0) {
+      return <div className="text-9xl">It's Empty :(</div>;
+    }
+  }
+
   return (
     <div className="grid justify-items-center auto-rows-min gap-3 mt-8">
       {props.shop
@@ -30,7 +52,7 @@ function Cart(props) {
         .map((item, index) => (
           <div
             key={index}
-            className="bg-zinc-800 grid grid-flow-col h-20 w-96 items-center"
+            className="bg-zinc-800 grid grid-flow-col h-20 w-96 items-center rounded"
           >
             <img width="80px" height="80px" src={item.img} alt="" />
             <div>{item.name}</div>
@@ -49,11 +71,7 @@ function Cart(props) {
             </button>
           </div>
         ))}
-      <div>
-        
-        <div>Total: ${total}</div>
-        <button>Checkout</button>
-      </div>
+      <ShowTotal />
     </div>
   );
 }
