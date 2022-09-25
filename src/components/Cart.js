@@ -34,7 +34,7 @@ function Cart(props) {
           <div>
             Total: <span className="font-bold">${total}</span>
           </div>
-          <button className="justify-self-end border-2 border-green-500 px-6">
+          <button className="justify-self-end border-2 border-green-500 px-6 hover:bg-green-500 ease-out duration-300">
             Checkout
           </button>
         </div>
@@ -59,7 +59,7 @@ function Cart(props) {
             <div>${item.price}</div>
             <div>x{item.qty}</div>
             <button
-              className="text-red-400 hover:text-red-500"
+              className="text-red-600 hover:text-red-400 ease-out duration-300"
               onClick={() => {
                 const array = props.shop.slice();
                 item.cart = false;

@@ -51,7 +51,7 @@ function Shop(props) {
             </button>
           </div>
           <button
-            className="border-2 border-green-500"
+            className="border-2 border-green-500 hover:bg-green-500 ease-out duration-300"
             onClick={() => {
               const array = props.shop.slice();
               props.shop[index].cart = true;

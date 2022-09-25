@@ -26,7 +26,7 @@ const App = () => {
   }
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/shopping-cart">
       <Routes>
         <Route path="/" element={<LayoutsWithNavbar />}>
           <Route path="/" element={<Home />} />
