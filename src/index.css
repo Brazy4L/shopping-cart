@@ -13,3 +13,13 @@ html {
   display: grid;
   grid-template: 48px 1fr 48px / 1fr;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}

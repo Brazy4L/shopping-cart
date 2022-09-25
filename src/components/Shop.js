@@ -16,19 +16,21 @@ function Shop(props) {
           <div>{item.name}</div>
           <div className="text-green-400">IN STOCK</div>
           <div>${item.price}</div>
-          <div className="flex items-center">
+          <div className="flex items-center gap-2">
             <label className="flex-grow">Quantity:</label>
             <button
               onClick={() => {
-                const array = props.shop.slice();
-                props.shop[index].qty += 1;
-                props.setShop(array);
+                if (props.shop[index].qty > 1) {
+                  const array = props.shop.slice();
+                  props.shop[index].qty -= 1;
+                  props.setShop(array);
+                }
               }}
             >
-              +1
+              -1
             </button>
             <input
-              className="text-black w-10 h-6"
+              className="text-black w-6 h-6 text-center"
               type="number"
               value={props.shop[index].qty}
               onChange={(e) => {
@@ -40,14 +42,12 @@ function Shop(props) {
             />
             <button
               onClick={() => {
-                if (props.shop[index].qty > 1) {
-                  const array = props.shop.slice();
-                  props.shop[index].qty -= 1;
-                  props.setShop(array);
-                }
+                const array = props.shop.slice();
+                props.shop[index].qty += 1;
+                props.setShop(array);
               }}
             >
-              -1
+              +1
             </button>
           </div>
           <button
