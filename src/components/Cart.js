@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 function Cart(props) {
   const [total, setTotal] = useState(0);
-  
+
   useEffect(() => {
     getTotal();
     // eslint-disable-next-line
@@ -24,7 +24,7 @@ function Cart(props) {
   };
 
   return (
-    <div className="grid justify-items-center auto-rows-min gap-3">
+    <div className="grid justify-items-center auto-rows-min gap-3 mt-8">
       {props.shop
         .filter((i) => i.cart === true)
         .map((item, index) => (
@@ -49,7 +49,11 @@ function Cart(props) {
             </button>
           </div>
         ))}
-      <div>Total: ${total}</div>
+      <div>
+        
+        <div>Total: ${total}</div>
+        <button>Checkout</button>
+      </div>
     </div>
   );
 }

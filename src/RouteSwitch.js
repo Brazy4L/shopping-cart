@@ -137,6 +137,16 @@ const RouteSwitch = () => {
     // eslint-disable-next-line
   }, []);
 
+  function LayoutsWithNavbar() {
+    return (
+      <>
+        <Navbar shop={shop} />
+        <Outlet />
+        <Footer />
+      </>
+    );
+  }
+
   return (
     <BrowserRouter>
       <Routes>
@@ -155,15 +165,5 @@ const RouteSwitch = () => {
     </BrowserRouter>
   );
 };
-
-function LayoutsWithNavbar() {
-  return (
-    <>
-      <Navbar />
-      <Outlet />
-      <Footer />
-    </>
-  );
-}
 
 export default RouteSwitch;
