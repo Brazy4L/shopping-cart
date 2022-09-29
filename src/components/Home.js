@@ -6,30 +6,30 @@ function Home() {
   const items = Items;
 
   return (
-    <div className="text-9xl grid place-items-center">
+    <div className="text-6xl lg:text-9xl grid place-items-center ease-out duration-300 h-[calc(100vh_-_6rem)]">
       <img
-        className="absolute top-28 left-32 -rotate-12 hover:scale-110 ease-out duration-300"
+        className="absolute w-[150px] h-[150px] top-[14rem] left-[3rem] lg:w-[300px] lg:h-[300px] lg:top-28 lg:left-32 -rotate-12 hover:scale-110 ease-out duration-300"
         src={items[0].img}
         width="300px"
         height="300px"
         alt=""
       />
       <img
-        className="absolute top-32 right-32 rotate-12 hover:scale-110 ease-out duration-300"
+        className="absolute w-[150px] h-[150px] top-[14rem] right-[2rem] lg:w-[300px] lg:h-[300px] lg:top-32 lg:right-32 rotate-12 hover:scale-110 ease-out duration-300"
         src={items[1].img}
         width="300px"
         height="300px"
         alt=""
       />
       <img
-        className="absolute bottom-12 right-32 -rotate-12 hover:scale-110 ease-out duration-300"
+        className="absolute w-[150px] h-[150px] bottom-[14rem] right-[13rem] lg:w-[300px] lg:h-[300px] lg:bottom-12 lg:right-32 -rotate-12 hover:scale-110 ease-out duration-300"
         src={items[2].img}
         width="300px"
         height="300px"
         alt=""
       />
       <img
-        className="absolute bottom-12 left-32 rotate-12 hover:scale-110 ease-out duration-300"
+        className="absolute w-[150px] h-[150px] bottom-[14rem] left-[13rem] lg:w-[300px] lg:h-[300px] lg:bottom-12 lg:left-32 rotate-12 hover:scale-110 ease-out duration-300"
         src={items[7].img}
         width="300px"
         height="300px"

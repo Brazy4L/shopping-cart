@@ -7,7 +7,7 @@ function Shop(props) {
           className="mt-4 bg-zinc-800 grid grid-cols-2 grid-rows-5 gap-x-5 w-fit h-[228px] p-6 rounded"
         >
           <img
-            className="col-start-1 row-start-1 row-span-5"
+            className="col-start-1 row-start-1 row-span-5 hover:scale-[1.15] ease-out duration-300"
             width="180px"
             height="180px"
             src={item.img}

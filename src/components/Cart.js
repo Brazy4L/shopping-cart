@@ -46,7 +46,7 @@ function Cart(props) {
   }
 
   return (
-    <div className="grid justify-items-center auto-rows-min gap-3 mt-8">
+    <div className="grid justify-items-center auto-rows-min gap-3 mt-8 h-[calc(100vh_-_8rem)]">
       {props.shop
         .filter((i) => i.cart === true)
         .map((item, index) => (
